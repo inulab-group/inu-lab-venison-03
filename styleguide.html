@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web UI Kit — INU LAB</title>
+<meta name="description" content="INU LAB web design system. Colour tokens, type scale, and components extracted from the live recipe pages.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+/* styleguide-only layout */
+.sg-wrap{max-width:1100px;margin-inline:auto;padding-inline:clamp(1rem,5vw,4rem)}
+.sg-header{padding-block:clamp(2rem,5vw,4rem) 1.5rem}
+.sg-header h1{font-size:var(--text-2xl);letter-spacing:-.01em}
+.sg-header p{color:var(--text-muted);max-width:60ch;margin-top:.75rem}
+.sg-section{padding-block:clamp(2.5rem,5vw,4rem);border-top:1px solid var(--border)}
+.sg-section > h2{font-size:var(--text-xl);margin-bottom:.4rem}
+.sg-section > .sg-desc{color:var(--text-muted);font-size:var(--text-sm);max-width:60ch;margin-bottom:2rem}
+.sg-label{font-family:var(--font-body);font-weight:600;font-size:var(--text-xs);letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ochre);margin-bottom:1rem}
+.sw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:1rem}
+.sw{border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--surface)}
+.sw-chip{height:70px}
+.sw-meta{padding:.6rem .7rem}
+.sw-name{font-weight:600;font-size:var(--text-sm);color:var(--ink)}
+.sw-hex{font-family:'Inter',monospace;font-size:var(--text-xs);color:var(--faint);text-transform:uppercase}
+.type-row{display:flex;align-items:baseline;gap:1.5rem;padding-block:.9rem;border-bottom:1px solid var(--border);flex-wrap:wrap}
+.type-row .t-tag{font-family:'Inter',monospace;font-size:var(--text-xs);color:var(--faint);width:120px;flex-shrink:0}
+.sg-swatches-block{margin-bottom:2.5rem}
+.comp-box{border:1px dashed var(--border);border-radius:12px;padding:1.75rem;background:var(--surface);margin-bottom:1rem}
+.comp-row{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+.sg-note{font-family:'Inter',monospace;font-size:var(--text-xs);color:var(--text-muted);margin-top:.75rem}
+.sg-token-table{width:100%;font-size:var(--text-sm)}
+.sg-token-table td{padding:.5rem 0;border-bottom:1px solid var(--border);vertical-align:top}
+.sg-token-table td:first-child{font-family:'Inter',monospace;color:var(--ochre);width:200px}
+.sg-token-table td:last-child{color:var(--text-muted)}
+.sg-footer{padding-block:3rem;border-top:1px solid var(--border);color:var(--faint);font-size:var(--text-xs)}
+.spec-demo{max-width:480px}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="INU LAB home">
+    <img src="assets/seal.svg" alt="" class="brand-mark" aria-hidden="true">
+    <span class="brand-word">INU LAB<span class="dot">.</span></span>
+  </a>
+  <nav class="nav" aria-label="Primary">
+    <a href="index.html">The range</a>
+    <a href="venison-03.html">Venison 03</a>
+    <a href="duck-04.html">Duck 04</a>
+    <a href="styleguide.html" aria-current="page">UI kit</a>
+  </nav>
+  <div class="header-actions">
+    <button data-theme-toggle aria-label="Switch to dark mode" class="theme-toggle">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="sg-wrap">
+
+  <div class="sg-header">
+    <p class="sg-label">INU LAB &middot; Web design system v1</p>
+    <h1>Web UI Kit</h1>
+    <p>The tokens and components that build the INU LAB site. Everything here is pulled from the live recipe pages, so the kit and the product never drift apart. Toggle the theme in the header to see every element in light and dark.</p>
+  </div>
+
+  <!-- COLOUR -->
+  <section class="sg-section">
+    <h2>Colour</h2>
+    <p class="sg-desc">A warm neutral base, Ink Navy for structure, and ochre as the single accent. Each recipe carries one family colour. All pairings meet WCAG AA for their text role.</p>
+
+    <div class="sg-swatches-block">
+      <p class="sg-label">Core &middot; light</p>
+      <div class="sw-grid">
+        <div class="sw"><div class="sw-chip" style="background:#F4F1EC"></div><div class="sw-meta"><div class="sw-name">Warm White</div><div class="sw-hex">#F4F1EC</div></div></div>
+        <div class="sw"><div class="sw-chip" style="background:#F1ECE3"></div><div class="sw-meta"><div class="sw-name">Panel</div><div class="sw-hex">#F1ECE3</div></div></div>
+        <div class="sw"><div class="sw-chip" style="background:#203040"></div><div class="sw-meta"><div class="sw-name">Ink</div><div class="sw-hex">#203040</div></div></div>
+        <div class="sw"><div class="sw-chip" style="background:#1A2838"></div><div class="sw-meta"><div class="sw-name">Navy</div><div class="sw-hex">#1A2838</div></div></div>
+        <div class="sw"><div class="sw-chip" style="background:#6B7683"></div><div class="sw-meta"><div class="sw-name">Slate</div><div class="sw-hex">#6B7683</div></div></div>
+        <div class="sw"><div class="sw-chip" style="background:#DAD6CE"></div><div class="sw-meta"><div class="sw-name">Line</div><div class="sw-hex">#DAD6CE</div></div></div>
+      </div>
+    </div>
+
+    <div class="sg-swatches-block">
+      <p class="sg-label">Accent &amp; family</p>
+      <div class="sw-grid">
+        <div class="sw"><div class="sw-chip" style="background:#B07040"></div><div class="sw-meta"><div class="sw-name">Ochre (accent)</div><div class="sw-hex">#B07040</div></div></div>
+        <div class="sw"><div class="sw-chip" style="background:#904038"></div><div class="sw-meta"><div class="sw-name">Red meat family</div><div class="sw-hex">#904038</div></div></div>
+        <div class="sw"><div class="sw-chip" style="background:#B07040"></div><div class="sw-meta"><div class="sw-name">Poultry family</div><div class="sw-hex">#B07040</div></div></div>
+      </div>
+    </div>
+
+    <div class="sg-swatches-block">
+      <p class="sg-label">Core &middot; dark</p>
+      <div class="sw-grid">
+        <div class="sw"><div class="sw-chip" style="background:#14100C"></div><div class="sw-meta"><div class="sw-name">Background</div><div class="sw-hex">#14100C</div></div></div>
+        <div class="sw"><div class="sw-chip" style="background:#1C1712"></div><div class="sw-meta"><div class="sw-name">Surface</div><div class="sw-hex">#1C1712</div></div></div>
+        <div class="sw"><div class="sw-chip" style="background:#EDE7DE"></div><div class="sw-meta"><div class="sw-name">Text</div><div class="sw-hex">#EDE7DE</div></div></div>
+        <div class="sw"><div class="sw-chip" style="background:#C88A5A"></div><div class="sw-meta"><div class="sw-name">Ochre (dark)</div><div class="sw-hex">#C88A5A</div></div></div>
+        <div class="sw"><div class="sw-chip" style="background:#C0584C"></div><div class="sw-meta"><div class="sw-name">Red meat (dark)</div><div class="sw-hex">#C0584C</div></div></div>
+        <div class="sw"><div class="sw-chip" style="background:#D69A63"></div><div class="sw-meta"><div class="sw-name">Poultry (dark)</div><div class="sw-hex">#D69A63</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TYPE -->
+  <section class="sg-section">
+    <h2>Typography</h2>
+    <p class="sg-desc">DM Sans for display, Inter for body. Weight and size carry hierarchy, never a third typeface. The scale is fluid and clamps between mobile and desktop.</p>
+    <div class="type-row"><span class="t-tag">text-2xl / display</span><span style="font-family:var(--font-display);font-weight:700;font-size:var(--text-2xl);line-height:1.1">Venison 03</span></div>
+    <div class="type-row"><span class="t-tag">text-xl / h2</span><span style="font-family:var(--font-display);font-weight:700;font-size:var(--text-xl)">Fewer ingredients, clearer results</span></div>
+    <div class="type-row"><span class="t-tag">text-lg / h3</span><span style="font-family:var(--font-display);font-weight:700;font-size:var(--text-lg)">Clean digestion</span></div>
+    <div class="type-row"><span class="t-tag">text-base / body</span><span style="font-size:var(--text-base)">One protein, no hidden blends. Printed on the pack, not hidden online.</span></div>
+    <div class="type-row"><span class="t-tag">text-sm / small</span><span style="font-size:var(--text-sm);color:var(--text-muted)">Cold chain delivery in Vaud and Geneva.</span></div>
+    <div class="type-row"><span class="t-tag">kicker / label</span><span class="section-kicker" style="margin:0">Nutrient analysis</span></div>
+  </section>
+
+  <!-- BUTTONS & PILLS -->
+  <section class="sg-section">
+    <h2>Buttons &amp; pills</h2>
+    <p class="sg-desc">One primary button. Navy in light mode, ochre in dark mode. Pills carry the recipe family colour.</p>
+    <div class="comp-box">
+      <div class="comp-row">
+        <a class="btn btn-primary">Join the Founding 100</a>
+        <a class="btn btn-primary btn-sm">Enquire</a>
+        <a class="btn btn-primary" style="background:transparent;color:var(--ochre);border:1px solid var(--ochre)">Trade enquiries</a>
+      </div>
+      <p class="sg-note">.btn.btn-primary &middot; .btn-sm &middot; ghost variant</p>
+    </div>
+    <div class="comp-box">
+      <div class="comp-row">
+        <span class="pill pill-family" data-family="redmeat">Red meat family</span>
+        <span class="pill pill-family" data-family="poultry" style="background:var(--poultry)">Poultry family</span>
+      </div>
+      <p class="sg-note">.pill.pill-family &middot; colour set by data-family on the page</p>
+    </div>
+  </section>
+
+  <!-- CARDS -->
+  <section class="sg-section">
+    <h2>Cards</h2>
+    <p class="sg-desc">Benefit cards and the buy box. Surface fill, one-pixel border, generous padding, ochre iconography.</p>
+    <div class="comp-box">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem">
+        <article class="benefit-card" style="margin:0">
+          <div class="bicon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="24" cy="20" r="11"/><path d="M24 9v22M15 20h18"/><path d="M14 38c4-3 16-3 20 0"/></svg></div>
+          <h3>Clean digestion</h3>
+          <p>One protein, no hidden blends. Easy on a sensitive gut.</p>
+        </article>
+        <div class="buy" style="align-self:start">
+          <div class="price-row"><span class="price">CHF 14.90</span><span class="price-unit">500 g tray</span></div>
+          <a class="btn btn-primary btn-block">Join the Founding 100</a>
+          <p class="reassure">Pause or stop any time.</p>
+        </div>
+      </div>
+      <p class="sg-note">.benefit-card &middot; .buy</p>
+    </div>
+  </section>
+
+  <!-- DATA -->
+  <section class="sg-section">
+    <h2>Data display</h2>
+    <p class="sg-desc">Outcome numbers and the nutrient spec table. Bars use the recipe family colour and encode value width.</p>
+    <div class="comp-box">
+      <div class="num-grid" style="border:0;padding:0">
+        <div class="num"><span class="num-val">1</span><span class="num-lab">protein per recipe, always named</span></div>
+        <div class="num"><span class="num-val">6</span><span class="num-lab">ingredients on the whole pack</span></div>
+        <div class="num"><span class="num-val">100%</span><span class="num-lab">nutrient analysis printed on the tray</span></div>
+        <div class="num"><span class="num-val">&minus;18&deg;</span><span class="num-lab">cold chain to the bowl</span></div>
+      </div>
+      <p class="sg-note">.num-grid &middot; .num</p>
+    </div>
+    <div class="comp-box" data-family="redmeat">
+      <table class="spec-table spec-demo">
+        <tbody>
+          <tr><th scope="row">Protein</th><td>16 g <span class="per">/ 100 g</span></td><td class="bar"><span style="width:80%"></span></td></tr>
+          <tr><th scope="row">Fat</th><td>12 g <span class="per">/ 100 g</span></td><td class="bar"><span style="width:60%"></span></td></tr>
+          <tr><th scope="row">Moisture</th><td>66%</td><td class="bar"><span style="width:66%"></span></td></tr>
+        </tbody>
+      </table>
+      <p class="sg-note">.spec-table &middot; bar width = value</p>
+    </div>
+  </section>
+
+  <!-- TOKENS -->
+  <section class="sg-section">
+    <h2>Tokens</h2>
+    <p class="sg-desc">The CSS custom properties every component reads. Change a token here and the whole system updates.</p>
+    <table class="sg-token-table">
+      <tbody>
+        <tr><td>--font-display</td><td>DM Sans &mdash; headings, numbers, prices</td></tr>
+        <tr><td>--font-body</td><td>Inter &mdash; body, labels, nav</td></tr>
+        <tr><td>--radius / --radius-sm</td><td>14px cards &middot; 8px buttons</td></tr>
+        <tr><td>--sp-2 &hellip; --sp-24</td><td>0.5rem to 6rem spacing scale</td></tr>
+        <tr><td>--text-xs &hellip; --text-2xl</td><td>fluid type scale, clamp based</td></tr>
+        <tr><td>--shadow</td><td>0 10px 30px rgba(32,48,64,.08)</td></tr>
+        <tr><td>--family</td><td>per-recipe accent, set via data-family</td></tr>
+        <tr><td>--trans</td><td>200ms cubic-bezier(.16,1,.3,1)</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="sg-footer">
+    INU LAB S-SARL &middot; Web design system v1 &middot; The science of a longer walk.
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
